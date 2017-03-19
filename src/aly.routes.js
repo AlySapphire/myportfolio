@@ -6,7 +6,12 @@ export const AlyRoutes = function($stateProvider, $urlRouterProvider, $locationP
 
     $stateProvider
         .state('aly', {
-            url: '/main',
+            url: '/',
+            redirectTo: '/home',
             component: 'alyMain'
-        });
+        })
+        .state('aly.home', {
+            url: 'home',
+            component: 'alyHome'
+        })
 }
