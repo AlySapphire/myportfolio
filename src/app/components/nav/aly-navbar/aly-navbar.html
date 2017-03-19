@@ -1,1 +1,11 @@
-<p>aly-navbar test</p>
+<div layout-padding md-colors="{'background-color': 'background'}">
+    <div layout="row" layout-align="space-between center" class="main-content-container">
+        <div class="md-display-1">Alyssa Fackrell</div>
+
+        <md-nav-bar md-selected-nav-item="$ctrl.getSelectedTab()" nav-bar-aria-label="Navigation Bar">
+            <md-nav-item md-nav-sref="aly.home" name="home">Home</md-nav-item>
+            <md-nav-item md-nav-sref="aly.projects" name="projects">Projects</md-nav-item>
+            <md-nav-item md-nav-sref="aly.contact" name="contact">Contact</md-nav-item>
+        </md-nav-bar>
+    </div>
+</div>

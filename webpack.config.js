@@ -59,6 +59,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: [
+                    path.resolve(__dirname, 'src'),
                     path.resolve(__dirname, 'node_modules/angular-material/'),
                     path.resolve(__dirname, 'node_modules/material-design-icons/iconfont')
                 ],
