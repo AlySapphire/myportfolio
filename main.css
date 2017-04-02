@@ -11,3 +11,7 @@
 .main-gradient-background {
     background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1));
 }
+
+aly-navbar .md-nav-bar {
+    border-bottom: none;
+}
