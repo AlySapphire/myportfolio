@@ -31,3 +31,7 @@ aly-projects md-card-content img {
 aly-projects md-card-content p {
     margin: 0;
 }
+
+md-input-container {
+    width: 100%;
+}

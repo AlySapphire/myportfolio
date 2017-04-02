@@ -18,6 +18,10 @@ var routesConfig = function($stateProvider, $urlRouterProvider, $locationProvide
             url: 'projects',
             component: 'alyProjects'
         })
+        .state('aly.contact', {
+            url: 'contact',
+            component: 'alyContact'
+        });
 }
 
 var themingConfig = function($mdThemingProvider) {
@@ -50,7 +54,7 @@ var alyNavbarComponent = {
 
         $scope.getSelectedTab = function() {
             return $state.current.name.split('.')[1];
-        }
+        };
 
         function setState() {
             if ($state.current.name === 'aly') {
@@ -76,6 +80,17 @@ var alyProjectsComponent = {
     }
 };
 
+var alyContactComponent = {
+    templateUrl: './templates/aly-contact.html',
+    controller: function AlyContactComponent($scope) {
+        "ngInject";
+
+        $scope.submitForm = function() {
+            console.log('TODO: Implement contact form submission');
+        };
+    }
+};
+
 // Module
 
 var AlyModule = angular.module('aly', ['ui.router', 'ngMaterial'])
@@ -83,5 +98,6 @@ var AlyModule = angular.module('aly', ['ui.router', 'ngMaterial'])
     .component('alyMain', alyMainComponent)
     .component('alyNavbar', alyNavbarComponent)
     .component('alyProjects', alyProjectsComponent)
+    .component('alyContact', alyContactComponent)
     .config(routesConfig)
     .config(themingConfig)
