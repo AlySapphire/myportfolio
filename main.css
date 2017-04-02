@@ -1,3 +1,11 @@
+html {
+    background-color: rgb(244, 143, 177)
+}
+
+body {
+    background-color: transparent;
+}
+
 .main-content-container {
     max-width: 960px;
     margin-left: auto;
@@ -14,4 +22,12 @@
 
 aly-navbar .md-nav-bar {
     border-bottom: none;
+}
+
+aly-projects md-card-content img {
+    width: 100%;
+}
+
+aly-projects md-card-content p {
+    margin: 0;
 }
