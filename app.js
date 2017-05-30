@@ -49,8 +49,18 @@ var alyMainComponent = {
 
 var alyNavbarComponent = {
     templateUrl: './templates/aly-navbar.html',
-    controller: function AlyNavbarComponent($scope, $state) {
+    controller: function AlyNavbarComponent($scope, $state, $mdSidenav, $mdMedia) {
         "ngInject";
+
+        let sidenavId = 'left';
+
+        $scope.smallScreen = function() {
+            return $mdMedia('xs');
+        };
+
+        $scope.openSidenav = function() {
+            return $mdSidenav(sidenavId).open();
+        };
 
         $scope.getSelectedTab = function() {
             return $state.current.name.split('.')[1];
@@ -63,6 +73,13 @@ var alyNavbarComponent = {
         }
 
         $scope.$watch($state.current.name, setState());
+    }
+};
+
+var alySidenavComponent = {
+    templateUrl: './templates/aly-sidenav.html',
+    controller: function AlySidenavComponent() {
+        "ngInject";
     }
 };
 
@@ -97,6 +114,7 @@ var AlyModule = angular.module('aly', ['ui.router', 'ngMaterial'])
     .component('alyHome', alyHomeComponent)
     .component('alyMain', alyMainComponent)
     .component('alyNavbar', alyNavbarComponent)
+    .component('alySidenav', alySidenavComponent)
     .component('alyProjects', alyProjectsComponent)
     .component('alyContact', alyContactComponent)
     .config(routesConfig)

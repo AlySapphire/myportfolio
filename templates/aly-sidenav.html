@@ -1,0 +1,20 @@
+<md-sidenav
+    md-component-id="left"
+    md-colors="{'background-color': 'background'}"
+    class="md-whiteframe-z1">
+    <md-toolbar layout="row" layout-align="end center" layout-padding>
+        <md-button
+            ng-click="$mdSidenav.hide()"
+            class="md-icon-button"
+            md-colors="{'background-color': 'background', 'color': 'primary'}">
+            <md-icon>chevron_left</md-icon>
+        </md-button>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item ui-sref="aly.home">Home</md-list-item>
+            <md-list-item ui-sref="aly.projects">Projects</md-list-item>
+            <md-list-item ui-sref="aly.contact">Contact</md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>
