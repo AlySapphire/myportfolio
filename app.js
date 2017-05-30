@@ -78,8 +78,52 @@ var alyNavbarComponent = {
 
 var alySidenavComponent = {
     templateUrl: './templates/aly-sidenav.html',
-    controller: function AlySidenavComponent() {
+    controller: function AlySidenavComponent($scope, $state, $mdColors, $mdSidenav) {
         "ngInject";
+
+        let sidenavId = 'left';
+
+        $scope.closeSidenav = function() {
+            return $mdSidenav(sidenavId).close();
+        };
+
+        $scope.stateSelected = function(state) {
+            return state === $state.current.name;
+        };
+
+        $scope.getStyleByState = function(state) {
+            let selected = $scope.stateSelected(state);
+
+            let styles = {
+                'background-color': selected ? $mdColors.getThemeColor('accent') : $mdColors.getThemeColor('background')
+            };
+
+            return styles;
+        };
+
+        $scope.sidenavItems = [
+            {
+                state: 'aly.home',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Home'
+            },
+            {
+                state: 'aly.projects',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Projects'
+            },
+            {
+                state: 'aly.contact',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Contact'
+            }
+        ];
     }
 };
 
