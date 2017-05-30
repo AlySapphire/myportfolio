@@ -1,0 +1,23 @@
+<md-sidenav
+    md-component-id="left"
+    md-colors="{'background-color': 'background'}"
+    class="md-whiteframe-z1">
+    <md-toolbar layout="row" layout-align="end center" layout-padding>
+        <md-button
+            ng-click="closeSidenav()"
+            class="md-icon-button"
+            md-colors="{'background-color': 'background', 'color': 'primary'}">
+            <md-icon>chevron_left</md-icon>
+        </md-button>
+    </md-toolbar>
+    <md-content>
+        <md-list md-colors="{'background-color': 'background'}">
+            <md-list-item
+                ng-repeat="item in sidenavItems"
+                ui-sref="{{item.state}}"
+                ng-style="item.getStyle()">
+                <span ng-bind="item.text"></span>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>

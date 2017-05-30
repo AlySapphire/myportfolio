@@ -49,8 +49,18 @@ var alyMainComponent = {
 
 var alyNavbarComponent = {
     templateUrl: './templates/aly-navbar.html',
-    controller: function AlyNavbarComponent($scope, $state) {
+    controller: function AlyNavbarComponent($scope, $state, $mdSidenav, $mdMedia) {
         "ngInject";
+
+        let sidenavId = 'left';
+
+        $scope.smallScreen = function() {
+            return $mdMedia('xs');
+        };
+
+        $scope.openSidenav = function() {
+            return $mdSidenav(sidenavId).open();
+        };
 
         $scope.getSelectedTab = function() {
             return $state.current.name.split('.')[1];
@@ -63,6 +73,57 @@ var alyNavbarComponent = {
         }
 
         $scope.$watch($state.current.name, setState());
+    }
+};
+
+var alySidenavComponent = {
+    templateUrl: './templates/aly-sidenav.html',
+    controller: function AlySidenavComponent($scope, $state, $mdColors, $mdSidenav) {
+        "ngInject";
+
+        let sidenavId = 'left';
+
+        $scope.closeSidenav = function() {
+            return $mdSidenav(sidenavId).close();
+        };
+
+        $scope.stateSelected = function(state) {
+            return state === $state.current.name;
+        };
+
+        $scope.getStyleByState = function(state) {
+            let selected = $scope.stateSelected(state);
+
+            let styles = {
+                'background-color': selected ? $mdColors.getThemeColor('accent') : $mdColors.getThemeColor('background')
+            };
+
+            return styles;
+        };
+
+        $scope.sidenavItems = [
+            {
+                state: 'aly.home',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Home'
+            },
+            {
+                state: 'aly.projects',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Projects'
+            },
+            {
+                state: 'aly.contact',
+                getStyle: function() {
+                    return $scope.getStyleByState(this.state);
+                },
+                text: 'Contact'
+            }
+        ];
     }
 };
 
@@ -97,6 +158,7 @@ var AlyModule = angular.module('aly', ['ui.router', 'ngMaterial'])
     .component('alyHome', alyHomeComponent)
     .component('alyMain', alyMainComponent)
     .component('alyNavbar', alyNavbarComponent)
+    .component('alySidenav', alySidenavComponent)
     .component('alyProjects', alyProjectsComponent)
     .component('alyContact', alyContactComponent)
     .config(routesConfig)
