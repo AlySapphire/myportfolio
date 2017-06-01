@@ -1,46 +1,70 @@
 <div class="main-content-container">
     <!-- List of projects -->
-    <aly-project-card
-        card-title="Nuts Bolts &amp; Goblins"
-        card-image="http://joelybahh.github.io/img/portfolio/NBG.png">
-        <div>
-            <p>
-                This is a game I developed in Unity3D with TeamPoliteDynamite. Nuts Bolts and Goblins is a colorful and fast-moving rhythm style game
-                where crude and nasty enemies can only be killed by using the correctly colored gun. I worked on the gameplay mechanics which involved
-                shooting, weapon swapping, health and movement as well as the boss mechanics which included AI programming, state machine, and health.
-                I also created and implemented an alternative to Unity's physics engine for a crucial game function.
-                <br />
-                <br />
-                Languages/Engines Used: C#, Unity3D
-            </p>
-        </div>
-        <div>
-            <p><a href="https://github.com/joelybahh/NutsBoltsAndGoblinsSourceCode" class="md-accent">GitHub Project</a></p>
-            <p><a href="https://vimeo.com/193914090" class="md-accent">Vimeo Video</a></p>
-            <p><a href="https://github.com/joelybahh/NutsBoltsAndGoblinsSourceCode/raw/master/NutsBoltsAndGoblins%20-%20Gold%201.0.0.apk" class="md-accent">Download Android APK</a></p>
-        </div>
-    </aly-project-card>
-
-    <aly-project-card
-        card-title="DynamicSoundtrackSystem"
-        card-image="http://i.imgur.com/yAxEKCu.png">
-        <div>
-            <p>
-                The DynamicSoundtrackSystem is a C++ library, created by me, which gives developers an easy way to
-                manipulate audio data to create a dynamic soundtrack. From using simple volume and mute controls, to
-                advanced DSP filters with custom parameters, developers are able to utilize this library to create a vast
-                number of effects that will greatly add to the immersion and enjoyment of any game.
-                <br />
-                <br />
-                Languages/API's Used: C++, FMOD
-            </p>
-        </div>
-        <div>
-            <p><a href="https://github.com/AlySapphire/DynamicSoundtrackSystem" class="md-accent">Library GitHub Project</a></p>
-            <p><a href="https://github.com/AlySapphire/DynamicSoundtrackDemoApp" class="md-accent">Demo Application GitHub Project</a></p>
-            <!--<p><a href="http://link/to/some/site" class="md-accent">Youtube Video</a></p>-->
-        </div>
-    </aly-project-card>
+<md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Nuts Bolts & Goblins</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div layout="row" layout-align="start start">
+                <div flex="50">
+                    <img src="http://joelybahh.github.io/img/portfolio/NBG.png">
+                </div>
+                <div flex="50" layout-padding>
+                    <div>
+                        <p>
+                            This is a game I developed in Unity3D with TeamPoliteDynamite. Nuts Bolts and Goblins is a colorful and fast-moving rhythm style game 
+                            where crude and nasty enemies can only be killed by using the correctly colored gun. I worked on the gameplay mechanics which involved 
+                            shooting, weapon swapping, health and movement as well as the boss mechanics which included AI programming, state machine, and health. 
+                            I also created and implemented an alternative to Unity's physics engine for a crucial game function.
+                            <br />
+                            <br />
+                            Languages/Engines Used: C#, Unity3D
+                        </p>
+                    </div>
+                    <div>
+                        <p><a href="https://github.com/joelybahh/NutsBoltsAndGoblinsSourceCode" class="md-accent">GitHub Project</a></p>
+                        <p><a href="https://vimeo.com/193914090" class="md-accent">Vimeo Video</a></p>
+                        <p><a href="https://github.com/joelybahh/NutsBoltsAndGoblinsSourceCode/raw/master/NutsBoltsAndGoblins%20-%20Gold%201.0.0.apk" class="md-accent">Download Android APK</a></p>
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+    
+     <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">DynamicSoundtrackSystem</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <div layout="row" layout-align="start start">
+                <div flex="50">
+                    <img src="http://i.imgur.com/yAxEKCu.png">
+                </div>
+                <div flex="50" layout-padding>
+                    <div>
+                        <p>
+                            The DynamicSoundtrackSystem is a C++ library, created by me, which gives developers an easy way to 
+                            manipulate audio data to create a dynamic soundtrack. From using simple volume and mute controls, to 
+                            advanced DSP filters with custom parameters, developers are able to utilize this library to create a vast 
+                            number of effects that will greatly add to the immersion and enjoyment of any game.
+                            <br />
+                            <br />
+                            Languages/API's Used: C++, FMOD
+                        </p>
+                    </div>
+                    <div>
+                        <p><a href="https://github.com/AlySapphire/DynamicSoundtrackSystem" class="md-accent">Library GitHub Project</a></p>
+                        <p><a href="https://github.com/AlySapphire/DynamicSoundtrackDemoApp" class="md-accent">Demo Application GitHub Project</a></p>
+                        <!--<p><a href="http://link/to/some/site" class="md-accent">Youtube Video</a></p>-->
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
 
     <md-card>
         <md-card-title>
@@ -56,10 +80,10 @@
                 <div flex="50" layout-padding>
                     <div>
                         <p>
-                            This simple but appealing rhythm game was made with UE4 in less 24 hours as part of a game jam. The player
-                            controls an innocent but musically aware slug who is just sliding through life. The slug must avoid
-                            various obstacles that appear to the beat of the in-game music, by jumping up to the ceiling and falling to
-                            the floor. I worked on the movement and gravity flipping mechanics as well as collision detection and
+                            This simple but appealing rhythm game was made with UE4 in less 24 hours as part of a game jam. The player 
+                            controls an innocent but musically aware slug who is just sliding through life. The slug must avoid 
+                            various obstacles that appear to the beat of the in-game music, by jumping up to the ceiling and falling to 
+                            the floor. I worked on the movement and gravity flipping mechanics as well as collision detection and 
                             adding in the animations.
                             <br />
                             <br />
@@ -90,7 +114,7 @@
                 <div flex="50" layout-padding>
                     <div>
                         <p>
-                            This is a small demo application that showcases some OpenGL techniques and graphics concepts I researched
+                            This is a small demo application that showcases some OpenGL techniques and graphics concepts I researched 
                             and implemented. Some techniques shown in this application are:
                             <ul>
                                 <li> Surface-based lighting with ambience and specular reflections </li>
