@@ -141,6 +141,18 @@ var alyProjectsComponent = {
     }
 };
 
+var alyProjectCardComponent = {
+    templateUrl: './templates/aly-project-card.html',
+    transclude: true,
+    bindings: {
+        cardTitle: '@',
+        cardImage: '@'
+    },
+    controller: function AlyProjectCardComponent() {
+        "ngInject";
+    }
+};
+
 var alyContactComponent = {
     templateUrl: './templates/aly-contact.html',
     controller: function AlyContactComponent($scope) {
@@ -160,6 +172,7 @@ var AlyModule = angular.module('aly', ['ui.router', 'ngMaterial'])
     .component('alyNavbar', alyNavbarComponent)
     .component('alySidenav', alySidenavComponent)
     .component('alyProjects', alyProjectsComponent)
+    .component('alyProjectCard', alyProjectCardComponent)
     .component('alyContact', alyContactComponent)
     .config(routesConfig)
     .config(themingConfig)
