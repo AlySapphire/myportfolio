@@ -6,26 +6,26 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <form>
+            <form ng-submit="submitForm()" ng-if="!submitSuccess">
                 <md-input-container>
                     <label>Name</label>
-                    <input type="text">
+                    <input type="text" required ng-model="contactData.name">
                 </md-input-container>
                 <md-input-container>
                     <label>Email</label>
-                    <input type="email">
+                    <input type="email" required ng-model="contactData.email">
                 </md-input-container>
                 <md-input-container>
                     <label>Phone</label>
-                    <input type="tel">
+                    <input type="tel" ng-model="contactData.phone">
                 </md-input-container>
                 <md-input-container>
                     <label>Message</label>
-                    <textarea type="text" rows="4"></textarea>
+                    <textarea type="text" rows="4" required ng-model="contactData.message"></textarea>
                 </md-input-container>
 
                 <div layout="row" layout-align="end center">
-                    <md-button ng-click="submitForm()" class="md-primary md-raised">Submit</md-button>
+                    <md-button type="submit" class="md-primary md-raised">Submit</md-button>
                 </div>
             </form>
 

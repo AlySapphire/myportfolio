@@ -143,11 +143,23 @@ var alyProjectsComponent = {
 
 var alyContactComponent = {
     templateUrl: './templates/aly-contact.html',
-    controller: function AlyContactComponent($scope) {
+    controller: function AlyContactComponent($scope, $http) {
         "ngInject";
 
+        $scope.url = 'contact_form.php';
+        $scope.submitSuccess = false;
+
+        $scope.contactData = {
+            name: null,
+            email: null,
+            phone: null,
+            message: null
+        };
+
         $scope.submitForm = function() {
-            console.log('TODO: Implement contact form submission');
+            return $http.post($scope.url, $scope.contactData).then(function() {
+                $scope.submitSuccess = true;
+            });
         };
     }
 };
