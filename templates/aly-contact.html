@@ -6,22 +6,22 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
-            <form ng-submit="submitForm()" ng-if="!submitSuccess">
+            <form method="POST" action="http://formspree.io/hayzeety+formspree@gmail.com">
                 <md-input-container>
                     <label>Name</label>
-                    <input type="text" required ng-model="contactData.name">
+                    <input type="text" required name="name">
                 </md-input-container>
                 <md-input-container>
                     <label>Email</label>
-                    <input type="email" required ng-model="contactData.email">
+                    <input type="email" required name="email">
                 </md-input-container>
                 <md-input-container>
                     <label>Phone</label>
-                    <input type="tel" ng-model="contactData.phone">
+                    <input type="tel" name="phone">
                 </md-input-container>
                 <md-input-container>
                     <label>Message</label>
-                    <textarea type="text" rows="4" required ng-model="contactData.message"></textarea>
+                    <textarea type="text" rows="4" required name="message"></textarea>
                 </md-input-container>
 
                 <div layout="row" layout-align="end center">
@@ -33,8 +33,6 @@
 
             <md-button href="https://github.com/AlySapphire">Github</md-button>
             <md-button href="https://www.linkedin.com/in/alyssafackrell/">LinkedIn</md-button>
-            <!--<md-button href="http://link/to/url">Twitter</md-button>
-            <md-button href="http://link/to/url">Youtube</md-button>-->
 
         </md-card-content>
     </md-card>
